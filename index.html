@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Hunt</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            width: 90%;
+            max-width: 450px;
+            padding: 30px;
+            text-align: center;
+            background: #1e293b;
+            border-radius: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 13px 25px;
+            border: none;
+            border-radius: 10px;
+            background: #3b82f6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>🔐 SECRET HUNT</h1>
+    <p>Parolni kiriting</p>
+
+    <input type="text" id="password" placeholder="Parol...">
+    <br>
+
+    <button onclick="checkPassword()">Tekshirish</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+
+const passwords = {
+
+    "NIZOM": "📍 1-manzil: Universitet hovlisidagi katta daraxt yoniga boring. U yerda keyingi parol yashirilgan.",
+
+    "KITOB": "📍 2-manzil: Universitetning 2-qavatidagi e'lonlar taxtasini toping. Keyingi topshiriq shu yerda."
+
+};
+
+function checkPassword() {
+
+    let input = document.getElementById("password").value.toUpperCase().trim();
+
+    let result = document.getElementById("result");
+
+    if (passwords[input]) {
+        result.innerHTML = passwords[input];
+    } else {
+        result.innerHTML = "❌ Noto'g'ri parol!";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
